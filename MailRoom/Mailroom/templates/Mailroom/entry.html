@@ -1,0 +1,72 @@
+{% extends 'Mailroom/Nav.html' %}
+
+{% block content %}
+<style>
+/* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #234c70; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+<!-- particles.js container --> <div id="particles-js"></div> <!-- stats - count particles --> <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+.container{
+	background-color:rgb(139,69,19,0.5);
+	text-align:center;
+	border-color:rgb(0,0,1,0.5);
+	border-width:10px;
+	border-style:solid;
+	border-radius:0px 0px 0px 0px;
+	padding:250px 50px;
+	margin :0px 0px 0px 400px ;
+	}
+.container{
+	color:black;
+	text-align:center;
+	}
+.entry{
+	padding:15px 375px;
+	margin right:20px;
+  font-size: 20px;
+}
+body{
+	background-color: black;/* This adds a backgroung color to the page. */
+	background-image:url("https://image.freepik.com/free-photo/mountain-of-packages_1101-33.jpg");/* this adds the backround image to the page. */
+	background-size: cover;/* This helps the backgound to cover the whole page */
+	background-position: center;
+	background-repeat: no-repeat;/* This helps the background to stop repeating */
+
+}
+</style>
+  <div class="container">
+  	<h1><b>Enter Package Details:</b></h1>
+  	<div class="row" style="margin:25px;">
+  		<form method="post" enctype="multipart/form-data">
+  		{% csrf_token %}
+<div class="entry">
+      <br />
+      <div class="form-group">
+        <label class="control-label">RollNo:</label>
+          <input class="form-control" placeholder="" name="RollNo"id="RollNo">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Company:</label>
+     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input class="form-control" placeholder="" name="Company" id="Company">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Number:</label>
+          <input class="form-control" placeholder="" name="Number"id="Number">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Phone:</label>
+     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input class="form-control" placeholder="" name="Phone" id="Phone">
+      </div>
+  		<button type="submit">Save Package</button>
+			{% for field in form %}
+        {% for error in field.errors %}
+      {{ error }}
+      {% endfor %}
+      {% endfor %}
+  	</form>
+  	</div>
+
+  </div>
+</div>
+
+{% endblock %}

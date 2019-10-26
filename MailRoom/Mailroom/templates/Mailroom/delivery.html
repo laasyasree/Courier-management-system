@@ -1,0 +1,42 @@
+{% extends 'Mailroom/Nav.html' %}
+
+{% block content %}
+  <style>
+  .smtg{
+  	background-color:white;
+    color: black;
+  	text-align:center;
+    opacity:0.8;
+  	border-color:rgb(0,0,1,0.5);
+  	border-width:10px;
+  	border-style:solid;
+  	border-radius:0px 0px 0px 0px;
+  	padding:100px 100px;
+  	margin:250px 250px 250px 250px;
+  }
+  body{
+  	background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgBiMLp57m6DQ8UBxleKEvVTeT45_EXUjPp3zY7pGdqGFcnVQ');
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+  	background-position: center;
+  }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </style>
+<div class="smtg">
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    {% for field in form %}
+        <label class="control-label"> {{ field.label_tag }} </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        {{ field }}<br><br>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary btn-md" id="login">Give Away</button>
+  </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'Mailroom/Nav.html' %}
+
+{% block content %}
+<style>
+form{
+	background-color:rgb(178,190,181,0.8);
+	text-align:center;
+	border-color:rgb(0,0,1,0.5);
+	border-width:10px;
+	border-style:solid;
+	border-radius:0px 0px 0px 0px;
+	padding:50px 50px;
+	margin:20px 20px 20px 20px;
+}
+.div1{
+	color: black;
+	text-align: center;
+	}
+body{
+	background-color: rgb(0,0,1,0.5);
+	background-image:url("http://www.launchproduction.com/wp-content/uploads/2013/04/8491450662_6367a9d82e.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+marquee {
+        width: 100%;
+        padding: 10px 0;
+        background-color: red;
+      }
+    </style>
+    <marquee direction="scroll"><b>Note:Mails you receive may end up in spam.Please check.</b></marquee>
+<div class="div1">
+  <div class="container">
+      <br /><br /><br />
+      <h4 style="color:red;text-align:center;">
+        {% for field in form %}
+          {% for error in field.errors %}
+        {{ error }}
+        {% endfor %}
+        {% endfor %}
+      </h4>
+    <div class="row">
+        <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+      {% for field in form %}
+          <label class="control-label"> {{ field.label_tag }} </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          {{ field }}<br>
+      {% endfor %}
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-md" id="login">Sign up</button>
+    </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+{% endblock %}
