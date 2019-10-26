@@ -6,7 +6,7 @@ You can start contributing to this project by:
 
 - Clone this repository:  ```https://github.com/laasyasree/Courier-management-system.git```
 - Setup the development environment:
-  - Go into the project folder ```cd Elites_Project/```
+  - Go into the project folder ```cd Courier-management-system/```
   - You can activate the source by doing ```source project/bin/activate```
   - Then enter into the mailroom using ```cd MailRoom/```
   - Migrate the data into the database by using ```python manage.py migrate```
