@@ -1,8 +1,18 @@
 # The MailRoom Project
 
+
+## Problem Statement
 Our parcel delivery is handled using hand records. So this project automates the system by making everything digitalized.
 
-You can start contributing to this project by:
+
+
+## Tecnology Stack
+* Django
+* Sqlite3
+* HTML/CSS
+* Javascript
+
+## Contribution Guidelines:
 
 - Clone this repository:  ```https://github.com/laasyasree/Courier-management-system.git```
 - Setup the development environment:
@@ -15,3 +25,6 @@ You can start contributing to this project by:
  - You can then view all the pages from there.
  
  Thanks For your contribution !!
+
+## Author
+[Laasya](https://github.com/laasyasree) ❤
