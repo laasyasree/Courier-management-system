@@ -27,4 +27,4 @@ Our parcel delivery is handled using hand records. So this project automates the
  Thanks For your contribution !!
 
 ## Author
-[Laasya](https://github.com/laasyasree) ❤
+[Laasya](https://github.com/laasyasree) 
